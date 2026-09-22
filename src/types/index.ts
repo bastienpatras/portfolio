@@ -34,6 +34,41 @@ export interface Project {
   lastUpdated: string;
 }
 
+export interface APIDemo {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  limitations?: string[];
+  endpoints?: APIEndpoint[];
+  examples?: CodeExample[];
+  securityNotes?: string[];
+  rateLimit?: string;
+  lastUpdated: string;
+}
+
+export interface APIEndpoint {
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  path: string;
+  description: string;
+  parameters?: APIParameter[];
+  response?: string;
+}
+
+export interface APIParameter {
+  name: string;
+  type: string;
+  required: boolean;
+  description: string;
+  default?: string;
+}
+
+export interface CodeExample {
+  language: 'curl' | 'javascript' | 'typescript' | 'python';
+  code: string;
+  description?: string;
+}
+
 export interface Talk {
   id: string;
   title: string;
@@ -54,7 +89,7 @@ export interface SearchFilters {
   artifactTypes: ArtifactType[];
 }
 
-export type ContentType = 'publication' | 'project' | 'talk';
+export type ContentType = 'publication' | 'project' | 'api' | 'talk';
 
 export interface SearchableItem {
   id: string;

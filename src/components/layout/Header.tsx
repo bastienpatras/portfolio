@@ -14,7 +14,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
     { label: "Sherlock'Homes \ud83c\udfe0", href: '/dpe-matcher' },
     { label: 'Publications', href: '/publications' },
     { label: 'Research', href: '/research' },
-
+    { label: 'APIs & Demos', href: '/apis' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ];
