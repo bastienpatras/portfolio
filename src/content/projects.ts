@@ -20,7 +20,7 @@ export const projects: Project[] = [
     tags: ['survival-analysis', 'gender-economics', 'cox-regression', 'data-science', 'python', 'r'],
     publicationIds: [],
     artifacts: [
-      { type: 'paper', url: 'https://journals.openedition.org/formationemploi/12964' },
+      { type: 'doi', url: 'https://journals.openedition.org/formationemploi/12964' },
     ],
     year: 2023,
     lastUpdated: '2023-05-01',
