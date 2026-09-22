@@ -1,14 +1,13 @@
 import type {
   Publication,
   Project,
-  APIDemo,
   Talk,
   SearchableItem,
   SearchFilters,
 } from '@/types';
 
 export function createSearchableItem(
-  item: Publication | Project | APIDemo | Talk,
+  item: Publication | Project | Talk,
   type: SearchableItem['type']
 ): SearchableItem {
   if (type === 'publication') {
@@ -34,17 +33,6 @@ export function createSearchableItem(
       description: proj.description,
       year: proj.year,
       tags: proj.tags,
-    };
-  }
-
-  if (type === 'api') {
-    const api = item as APIDemo;
-    return {
-      id: api.id,
-      type: 'api',
-      title: api.title,
-      description: api.description,
-      tags: api.tags,
     };
   }
 

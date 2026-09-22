@@ -8,8 +8,7 @@ import { Home } from '@/pages/Home';
 import { Research } from '@/pages/Research';
 import { Publications } from '@/pages/Publications';
 import { PublicationDetail } from '@/pages/PublicationDetail';
-import { APIs } from '@/pages/APIs';
-import { APIDetail } from '@/pages/APIDetail';
+
 import { About } from '@/pages/About';
 import { Contact } from '@/pages/Contact';
 import { DPEMatcher } from '@/pages/DPEMatcher';
@@ -28,8 +27,7 @@ function App() {
             <Route path="/publications" element={<Publications />} />
             <Route path="/publications/:id" element={<PublicationDetail />} />
             <Route path="/dpe-matcher" element={<DPEMatcher />} />
-            <Route path="/apis" element={<APIs />} />
-            <Route path="/apis/:id" element={<APIDetail />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

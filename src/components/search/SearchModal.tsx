@@ -7,12 +7,11 @@ import {
 } from '@/components/ui/Modal';
 import { publications } from '@/content/publications';
 import { projects } from '@/content/projects';
-import { apis } from '@/content/apis';
 import { talks } from '@/content/talks';
 import { createSearchableItem, filterSearchableItems } from '@/lib/search';
 import { useSearchStore } from '@/stores/searchStore';
 import { Tag } from '@/components/ui/Tag';
-import { FileText, Folder, Code, Presentation } from 'lucide-react';
+import { FileText, Folder, Presentation } from 'lucide-react';
 import type { SearchableItem } from '@/types';
 
 interface SearchModalProps {
@@ -30,7 +29,6 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
     return [
       ...publications.map((p) => createSearchableItem(p, 'publication')),
       ...projects.map((p) => createSearchableItem(p, 'project')),
-      ...apis.map((a) => createSearchableItem(a, 'api')),
       ...talks.map((t) => createSearchableItem(t, 'talk')),
     ];
   }, []);
@@ -41,10 +39,9 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
   }, [allItems, filters, search]);
 
   const handleSelect = (item: SearchableItem) => {
-    const routes = {
+    const routes: Record<string, string> = {
       publication: `/publications/${item.id}`,
       project: `/research#${item.id}`,
-      api: `/apis/${item.id}`,
       talk: `/about#talks`,
     };
 
@@ -70,8 +67,6 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
         return <FileText className="h-4 w-4" />;
       case 'project':
         return <Folder className="h-4 w-4" />;
-      case 'api':
-        return <Code className="h-4 w-4" />;
       case 'talk':
         return <Presentation className="h-4 w-4" />;
     }
@@ -89,7 +84,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             <Command.Input
               value={search}
               onValueChange={setSearch}
-              placeholder="Search publications, projects, APIs, talks..."
+              placeholder="Search publications, projects, talks..."
               className="flex h-12 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
             />
           </div>
@@ -98,7 +93,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               No results found.
             </Command.Empty>
 
-            {['publication', 'project', 'api', 'talk'].map((type) => {
+            {['publication', 'project', 'talk'].map((type) => {
               const items = filteredItems.filter((item) => item.type === type);
               if (items.length === 0) return null;
 

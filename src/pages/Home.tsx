@@ -125,14 +125,14 @@ export function Home({ onSearchOpen }: HomeProps) {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle>APIs & Demos</CardTitle>
+                <CardTitle>Sherlock'Homes</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Explore interactive demos and APIs showcasing our research.
+                  Find the energy performance certificate for any French property.
                 </p>
                 <Button variant="outline" asChild>
-                  <Link to="/apis">Browse APIs</Link>
+                  <Link to="/dpe-matcher">Try it</Link>
                 </Button>
               </CardContent>
             </Card>
