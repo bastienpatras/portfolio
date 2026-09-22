@@ -1,4 +1,4 @@
-import { Mail, Twitter, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -20,6 +20,38 @@ export function Contact() {
       description="Get in touch for collaborations, questions, or opportunities"
     >
       <div className="mx-auto max-w-2xl space-y-8">
+        <Card>
+          <CardHeader>
+            <CardTitle>PhD Supervisors</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <a
+              href="https://www.ppcombes.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
+            >
+              <ExternalLink className="h-5 w-5" />
+              <div>
+                <div className="font-medium">Pierre-Philippe Combes</div>
+                <div className="text-sm text-muted-foreground">ppcombes.com</div>
+              </div>
+            </a>
+            <a
+              href="https://www.sciencespo.fr/department-economics/people/franz-ostrizek"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
+            >
+              <ExternalLink className="h-5 w-5" />
+              <div>
+                <div className="font-medium">Franz Ostrizek</div>
+                <div className="text-sm text-muted-foreground">Sciences Po Department of Economics</div>
+              </div>
+            </a>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle>Email</CardTitle>
@@ -52,8 +84,10 @@ export function Contact() {
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              90 Rue Pelleport<br />
-              75020 Paris, France
+              Department of Economics<br />
+              Sciences Po Paris<br />
+              28 Rue des Saints-Pères<br />
+              75007 Paris, France
             </p>
           </CardContent>
         </Card>
@@ -65,20 +99,7 @@ export function Contact() {
           <CardContent className="space-y-4">
             <div className="flex flex-col gap-3">
               <a
-                href="https://twitter.com/username"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
-              >
-                <Twitter className="h-5 w-5" />
-                <div>
-                  <div className="font-medium">Twitter</div>
-                  <div className="text-sm text-muted-foreground">@username</div>
-                </div>
-              </a>
-
-              <a
-                href="https://github.com/username"
+                href="https://github.com/PATRASBastien"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
@@ -86,12 +107,12 @@ export function Contact() {
                 <Github className="h-5 w-5" />
                 <div>
                   <div className="font-medium">GitHub</div>
-                  <div className="text-sm text-muted-foreground">@username</div>
+                  <div className="text-sm text-muted-foreground">@PATRASBastien</div>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com/in/username"
+                href="https://www.linkedin.com/in/bastien-patras-9a0554128/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
@@ -100,7 +121,7 @@ export function Contact() {
                 <div>
                   <div className="font-medium">LinkedIn</div>
                   <div className="text-sm text-muted-foreground">
-                    /in/username
+                    Bastien Patras
                   </div>
                 </div>
               </a>

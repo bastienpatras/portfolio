@@ -169,7 +169,7 @@ export function About() {
                   <strong>Dissertation:</strong> "Energy Regulation and Housing Market Dynamics"
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  <strong>Supervisor:</strong> Pierre-Philippe Combes
+                  <strong>Supervisors:</strong> Pierre-Philippe Combes, Franz Ostrizek
                 </p>
               </CardContent>
             </Card>

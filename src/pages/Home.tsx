@@ -129,7 +129,7 @@ export function Home({ onSearchOpen }: HomeProps) {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Explore interactive demos and APIs showcasing our research.
+                  Explore interactive demos and APIs showcasing my research.
                 </p>
                 <Button variant="outline" asChild>
                   <Link to="/apis">Browse APIs</Link>
@@ -142,7 +142,7 @@ export function Home({ onSearchOpen }: HomeProps) {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Learn more about our research background and CV.
+                  Learn more about my research background and CV.
                 </p>
                 <Button variant="outline" asChild>
                   <Link to="/about">Read more</Link>
@@ -158,7 +158,7 @@ export function Home({ onSearchOpen }: HomeProps) {
                   Interested in collaboration or have questions?
                 </p>
                 <Button variant="outline" asChild>
-                  <Link to="/contact">Contact us</Link>
+                  <Link to="/contact">Contact me</Link>
                 </Button>
               </CardContent>
             </Card>
