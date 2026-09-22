@@ -12,8 +12,8 @@ export function Header({ onSearchOpen }: HeaderProps) {
 
   const navItems = [
     { label: "Sherlock'Homes \ud83c\udfe0", href: '/dpe-matcher' },
-    { label: 'Research', href: '/research' },
     { label: 'Publications', href: '/publications' },
+    { label: 'Research', href: '/research' },
 
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
