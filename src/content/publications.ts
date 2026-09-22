@@ -2,6 +2,29 @@ import type { Publication } from '@/types';
 
 export const publications: Publication[] = [
   {
+    id: 'mandatory-disclosure',
+    title: 'Mandatory Disclosure and Housing Market Dynamics',
+    authors: ['Bastien Patras'],
+    year: 2025,
+    status: 'working-paper',
+    venue: 'Sciences Po',
+    abstract:
+      'This paper studies how mandatory disclosure of energy performance affects housing market outcomes, using the 2021 reform that made Energy Performance Certificate (EPC) ratings legally binding and visible in all real-estate advertisements in France. Leveraging staggered implementation across neighboring countries and rich microdata on property listings, I combine quasi-experimental and market-wide evidence to study the effects of energy performance disclosure on housing prices. At the France\u2013Belgium border, mandatory disclosure induces a large and persistent price penalty of around 10 percentage points for energy-intensive dwellings. At the national level, energy inefficiency is consistently penalized across property types. Most strikingly, and contrary to the prediction of full unraveling, non-disclosure persists and is rewarded: listings without an EPC rating command a persistent premium of roughly 6 percentage points in the apartment market several years after the reform.',
+    artifacts: [
+      { type: 'pdf', url: '/papers/green-premium-disclosure-2025.pdf' },
+      { type: 'code', url: 'https://github.com/bastienpatras/green-premium-disclosure' },
+    ],
+    tags: ['Mandatory-Disclosure', 'Housing-Markets', 'Energy-Economics', 'EPC', 'Unraveling', 'Cross-Border', 'France-Belgium'],
+    relatedIds: ['silence-pays', 'rental-tension'],
+    bibtex: `@unpublished{patras2025mandatory,
+  title={Mandatory Disclosure and Housing Market Dynamics},
+  author={Patras, Bastien},
+  year={2025},
+  note={Working Paper, Sciences Po}
+}`,
+    lastUpdated: '2025-09-22',
+  },
+  {
     id: 'silence-pays',
     title: 'When Silence Pays: Mandatory Disclosure and Strategic Concealment in Housing Markets',
     authors: ['Bastien Patras'],
@@ -15,7 +38,7 @@ export const publications: Publication[] = [
       { type: 'code', url: 'https://github.com/bastienpatras/structural-model-chapter-two' },
     ],
     tags: ['Mandatory-Disclosure', 'Housing-Markets', 'Information-Asymmetry', 'Unraveling', 'Energy-Economics', 'Structural-Estimation'],
-    relatedIds: ['rental-tension'],
+    relatedIds: ['mandatory-disclosure', 'rental-tension'],
     bibtex: `@unpublished{patras2025silence,
   title={When Silence Pays: Mandatory Disclosure and Strategic Concealment in Housing Markets},
   author={Patras, Bastien},
@@ -38,7 +61,7 @@ export const publications: Publication[] = [
       { type: 'code', url: 'https://github.com/bastienpatras/rental-disclosure-tension' },
     ],
     tags: ['Rental-Markets', 'Non-Disclosure', 'Energy-Performance', 'Market-Tension', 'Housing-Policy'],
-    relatedIds: ['silence-pays'],
+    relatedIds: ['mandatory-disclosure', 'silence-pays'],
     bibtex: `@unpublished{patras2025rental,
   title={Non-Disclosure and Rental Market Tension: Descriptive Evidence},
   author={Patras, Bastien},
