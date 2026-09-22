@@ -10,7 +10,6 @@ import { APIPlayground } from '@/components/api/APIPlayground';
 import { DPEFieldCatalog } from '@/components/dpe/DPEFieldCatalog';
 import { apis } from '@/content/apis';
 import { formatDate } from '@/lib/utils';
-import { classifyText } from '@/api/text-classification/client';
 import { matchDPE } from '@/api/dpe-matcher/client';
 
 export function APIDetail() {
@@ -37,15 +36,6 @@ export function APIDetail() {
   }
 
   const handleAPIExecution = async (input: Record<string, unknown>) => {
-    // Route to appropriate API client based on ID
-    if (id === 'text-classification') {
-      return await classifyText({
-        text: input.text as string,
-        model: input.model as string,
-        return_probabilities: input.return_probabilities as boolean,
-      });
-    }
-
     if (id === 'dpe-matcher') {
       return await matchDPE({
         address: input.address as string,
@@ -58,45 +48,10 @@ export function APIDetail() {
       });
     }
 
-    // Mock response for other APIs
-    return {
-      message: 'This is a demo response',
-      timestamp: new Date().toISOString(),
-      input,
-    };
+    throw new Error(`Unknown API: ${id}`);
   };
 
   const getPlaygroundConfig = () => {
-    if (id === 'text-classification') {
-      return {
-        defaultInput: {
-          text: 'This product is amazing!',
-          model: 'base',
-          return_probabilities: true,
-        },
-        inputFields: [
-          {
-            name: 'text',
-            label: 'Text to classify',
-            type: 'text' as const,
-            placeholder: 'Enter text to classify...',
-            required: true,
-          },
-          {
-            name: 'model',
-            label: 'Model',
-            type: 'select' as const,
-            options: ['base', 'large', 'distilled'],
-          },
-          {
-            name: 'return_probabilities',
-            label: 'Return probabilities',
-            type: 'boolean' as const,
-          },
-        ],
-      };
-    }
-
     if (id === 'dpe-matcher') {
       return {
         defaultInput: {
@@ -143,7 +98,6 @@ export function APIDetail() {
       };
     }
 
-    // Default playground config
     return {
       defaultInput: { input: 'test' },
       inputFields: [
