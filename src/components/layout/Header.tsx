@@ -24,7 +24,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="font-bold text-xl">Research Portfolio</span>
+            <span className="font-bold text-xl">Bastien Patras</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">
