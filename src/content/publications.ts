@@ -5,7 +5,7 @@ export const publications: Publication[] = [
     id: 'mandatory-disclosure',
     title: 'Mandatory Disclosure and Housing Market Dynamics',
     authors: ['Bastien Patras'],
-    year: 2025,
+    year: 2024,
     status: 'working-paper',
     venue: 'Sciences Po',
     abstract:
@@ -51,7 +51,7 @@ export const publications: Publication[] = [
     id: 'rental-tension',
     title: 'Non-Disclosure and Rental Market Tension: Descriptive Evidence',
     authors: ['Bastien Patras'],
-    year: 2025,
+    year: 2026,
     status: 'working-paper',
     venue: 'Sciences Po',
     abstract:

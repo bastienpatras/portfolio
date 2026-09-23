@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { publications } from '@/content/publications';
 import { projects } from '@/content/projects';
+import { talks } from '@/content/talks';
 import { Suspense, lazy } from 'react';
 
 const Hero3D = lazy(() => import('@/components/3d/Hero3D'));
@@ -88,8 +89,42 @@ export function Home({ onSearchOpen }: HomeProps) {
         </div>
       </section>
 
-      {/* Research Areas */}
+      {/* Seminars & Conferences */}
       <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Seminars & Conferences</h2>
+            <Button variant="ghost" asChild>
+              <Link to="/about#talks">
+                View all <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {talks.map((talk) => (
+              <Card key={talk.id} className="hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg line-clamp-2">{talk.event}</CardTitle>
+                  <div className="text-sm text-muted-foreground">
+                    {new Date(talk.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                    })}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {talk.location}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Areas */}
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold">Research Areas</h2>
