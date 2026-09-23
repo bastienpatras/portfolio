@@ -75,6 +75,7 @@ export interface Talk {
   event: string;
   date: string;
   location?: string;
+  url?: string;
   slides?: string;
   video?: string;
   tags: string[];

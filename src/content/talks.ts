@@ -7,6 +7,7 @@ export const talks: Talk[] = [
     event: 'AREUEA International Conference 2026',
     date: '2026-07-23',
     location: 'Medellín, Colombia',
+    url: 'https://www.areuea.org/international',
     tags: [
       'conference',
       'mandatory-disclosure',
@@ -20,6 +21,7 @@ export const talks: Talk[] = [
     event: '20th International Symposium on Econometric Theory and Applications (SETA 2026)',
     date: '2026-06-13',
     location: 'University of Tokyo, Tokyo',
+    url: 'https://sites.google.com/g.ecc.u-tokyo.ac.jp/seta2026',
     tags: [
       'conference',
       'econometrics',
@@ -33,6 +35,7 @@ export const talks: Talk[] = [
     event: '15th European Meeting of the Urban Economics Association',
     date: '2026-05-08',
     location: 'CREI, Barcelona',
+    url: 'https://urbaneconomics.org/meetings/emuea2026/',
     tags: [
       'conference',
       'urban-economics',

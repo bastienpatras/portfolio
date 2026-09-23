@@ -80,6 +80,17 @@ export function About() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
+                    {talk.url && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a
+                          href={talk.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Conference website
+                        </a>
+                      </Button>
+                    )}
                     {talk.slides && (
                       <Button variant="outline" size="sm" asChild>
                         <a

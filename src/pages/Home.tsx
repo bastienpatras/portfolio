@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { publications } from '@/content/publications';
@@ -46,6 +46,29 @@ export function Home({ onSearchOpen }: HomeProps) {
                 <Search className="mr-2 h-5 w-5" />
                 Search Research
               </Button>
+            </div>
+            <div className="flex flex-wrap gap-4 mt-4">
+              <div className="text-sm text-muted-foreground">
+                Supervisors:
+              </div>
+              <a
+                href="https://www.ppcombes.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                Pierre-Philippe Combes
+              </a>
+              <a
+                href="https://www.franz-ostrizek.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                Franz Ostrizek
+              </a>
             </div>
           </div>
         </div>
@@ -102,7 +125,14 @@ export function Home({ onSearchOpen }: HomeProps) {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {talks.map((talk) => (
-              <Card key={talk.id} className="hover:shadow-md transition-shadow">
+              <a
+                key={talk.id}
+                href={talk.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+              <Card className="hover:shadow-md transition-shadow h-full">
                 <CardHeader>
                   <CardTitle className="text-lg line-clamp-2">{talk.event}</CardTitle>
                   <div className="text-sm text-muted-foreground">
@@ -118,6 +148,7 @@ export function Home({ onSearchOpen }: HomeProps) {
                   </p>
                 </CardContent>
               </Card>
+              </a>
             ))}
           </div>
         </div>

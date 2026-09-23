@@ -38,7 +38,7 @@ export function Contact() {
               </div>
             </a>
             <a
-              href="https://www.sciencespo.fr/department-economics/people/franz-ostrizek"
+              href="https://www.franz-ostrizek.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
@@ -46,7 +46,7 @@ export function Contact() {
               <ExternalLink className="h-5 w-5" />
               <div>
                 <div className="font-medium">Franz Ostrizek</div>
-                <div className="text-sm text-muted-foreground">Sciences Po Department of Economics</div>
+                <div className="text-sm text-muted-foreground">franz-ostrizek.com</div>
               </div>
             </a>
           </CardContent>
