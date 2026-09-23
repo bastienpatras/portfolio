@@ -49,6 +49,7 @@ export const talks: Talk[] = [
     event: '31st ERES Annual Conference 2025',
     date: '2025-07-05',
     location: 'Athens, Greece',
+    url: 'https://eres.org/annual-conferences/2025',
     slides: '/slides/neurips2024.pdf',
     tags: [
       'conference',
