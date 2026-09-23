@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Search, ExternalLink } from 'lucide-react';
+import { ArrowRight, Search, ExternalLink, FileText, Presentation } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { publications } from '@/content/publications';
@@ -52,7 +52,7 @@ export function Home({ onSearchOpen }: HomeProps) {
                 Supervisors:
               </div>
               <a
-                href="https://www.ppcombes.com/"
+                href="https://sites.google.com/view/pierrephilippecombes/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -61,7 +61,7 @@ export function Home({ onSearchOpen }: HomeProps) {
                 Pierre-Philippe Combes
               </a>
               <a
-                href="https://www.franz-ostrizek.com/"
+                href="https://franzostrizek.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -102,9 +102,21 @@ export function Home({ onSearchOpen }: HomeProps) {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground line-clamp-3">
+                  <p className="text-sm text-muted-foreground line-clamp-3 mb-3">
                     {pub.abstract}
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    {pub.artifacts.map((artifact) => (
+                      <Button key={artifact.type} variant="outline" size="sm" asChild>
+                        <a href={artifact.url} target="_blank" rel="noopener noreferrer">
+                          {artifact.type === 'pdf' && <FileText className="mr-1.5 h-3.5 w-3.5" />}
+                          {artifact.type === 'slides' && <Presentation className="mr-1.5 h-3.5 w-3.5" />}
+                          {artifact.type === 'code' && <ExternalLink className="mr-1.5 h-3.5 w-3.5" />}
+                          {artifact.type.toUpperCase()}
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -125,14 +137,7 @@ export function Home({ onSearchOpen }: HomeProps) {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {talks.map((talk) => (
-              <a
-                key={talk.id}
-                href={talk.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-              <Card className="hover:shadow-md transition-shadow h-full">
+              <Card key={talk.id} className="hover:shadow-md transition-shadow h-full">
                 <CardHeader>
                   <CardTitle className="text-lg line-clamp-2">{talk.event}</CardTitle>
                   <div className="text-sm text-muted-foreground">
@@ -143,12 +148,19 @@ export function Home({ onSearchOpen }: HomeProps) {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground mb-3">
                     {talk.location}
                   </p>
+                  {talk.url && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={talk.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                        Website
+                      </a>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
-              </a>
             ))}
           </div>
         </div>

@@ -26,7 +26,7 @@ export function Contact() {
           </CardHeader>
           <CardContent className="space-y-3">
             <a
-              href="https://www.ppcombes.com/"
+              href="https://sites.google.com/view/pierrephilippecombes/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
@@ -34,11 +34,11 @@ export function Contact() {
               <ExternalLink className="h-5 w-5" />
               <div>
                 <div className="font-medium">Pierre-Philippe Combes</div>
-                <div className="text-sm text-muted-foreground">ppcombes.com</div>
+                <div className="text-sm text-muted-foreground">pierrephilippecombes</div>
               </div>
             </a>
             <a
-              href="https://www.franz-ostrizek.com/"
+              href="https://franzostrizek.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
@@ -46,7 +46,7 @@ export function Contact() {
               <ExternalLink className="h-5 w-5" />
               <div>
                 <div className="font-medium">Franz Ostrizek</div>
-                <div className="text-sm text-muted-foreground">franz-ostrizek.com</div>
+                <div className="text-sm text-muted-foreground">franzostrizek.com</div>
               </div>
             </a>
           </CardContent>
